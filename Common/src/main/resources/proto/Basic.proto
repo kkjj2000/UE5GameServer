@@ -1,0 +1,26 @@
+syntax = "proto3";
+package PackageName;
+
+option java_outer_classname = "BasicProto";
+
+message BaseReq {
+  DataOrderType order = 1;
+  bytes body = 2;
+}
+
+message BaseRes{
+  ResStatus status = 1;
+  string msg = 2;
+}
+
+enum ResStatus {
+  STATUS_NONE = 0;
+  STATUS_SUCCESS = 1;
+  STATUS_ERROR = 2;
+}
+
+enum DataOrderType {
+  ORDER_NONE = 0;
+  ORDER_LOGIN = 1;
+  ORDER_TRANSFORM = 2;
+}

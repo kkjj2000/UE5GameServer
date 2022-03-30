@@ -1,0 +1,32 @@
+syntax = "proto3";
+package PackageName;
+import "Basic.proto";
+
+option java_outer_classname = "UserProto";
+
+message LoginRequest {
+  string UserId = 1;
+  string UserName = 2;
+  PlayerPlatform Platform = 3;
+}
+
+message LoginResponse {
+  BaseRes res = 1;
+  int32 LobbyPort = 2;
+  string LobbyHost = 3;
+  User user = 4;
+}
+
+message User {
+  string UserId = 1;
+  string Username = 2;
+  string Token = 3;
+  int32 Status = 4;
+  double Level = 5;
+}
+
+enum PlayerPlatform {
+  STEAM = 0;
+  EPIC = 1;
+  OTHER = 2;
+}

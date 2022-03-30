@@ -1,0 +1,13 @@
+syntax = "proto3";
+package PackageName;
+
+option java_outer_classname = "GameProto";
+
+message ActorTransform {
+  float VectorX = 1;
+  float VectorY = 2;
+  float VectorZ = 3;
+  float RotatorYaw = 4;
+  float RotatorRoll = 5;
+  float RotatorPitch = 6;
+}
