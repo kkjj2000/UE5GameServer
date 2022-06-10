@@ -1,0 +1,22 @@
+syntax = "proto3";
+package PackageName;
+
+option java_outer_classname = "LobbyProto";
+
+message CreateRoomReq {
+  string RoomName = 1;
+  string RoomMap = 2;
+  string RoomSize = 3;
+  string UserId = 4;
+}
+
+message CreateRoomRes {
+  string RoomId = 1;
+}
+
+message FindRoomReq {
+  string RoomName = 1;
+  string RoomMap = 2;
+  string RoomSize = 3;
+  string UserId = 4;
+}

@@ -1,6 +1,5 @@
 syntax = "proto3";
 package PackageName;
-import "Basic.proto";
 
 option java_outer_classname = "UserProto";
 
@@ -11,13 +10,12 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  BaseRes res = 1;
-  int32 LobbyPort = 2;
-  string LobbyHost = 3;
-  User user = 4;
+  int32 LobbyPort = 1;
+  string LobbyHost = 2;
+  UserInfo user = 3;
 }
 
-message User {
+message UserInfo {
   string UserId = 1;
   string Username = 2;
   string Token = 3;

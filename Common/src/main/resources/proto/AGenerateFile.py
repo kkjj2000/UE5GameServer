@@ -10,8 +10,8 @@ temp_java_dir = "JavaDir"
 package_cpp = "ProtoModel"
 package_java = "com.fuxin.common.proto"
 
-output_cpp = "D:\\Unreal Projects\\SocketServerDemo\\Source\\SocketServerDemo\\ProtoModel"
-output_java = "D:\\Unreal Projects\\UE5GameServer\\Common\\src\\main\\java"
+output_cpp = "D:\\Unreal Projects\\DreadHunger\\Source\\DreadHunger\\ProtoModel"
+output_java = "D:\\Unreal Projects\\MySocketServer\\UE5GameServer\\Common\\src\\main\\java"
 
 
 def replace_file(filepath, old_txt, new_txt):

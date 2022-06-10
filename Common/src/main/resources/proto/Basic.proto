@@ -11,6 +11,7 @@ message BaseReq {
 message BaseRes{
   ResStatus status = 1;
   string msg = 2;
+  bytes body = 3;
 }
 
 enum ResStatus {
@@ -22,5 +23,8 @@ enum ResStatus {
 enum DataOrderType {
   ORDER_NONE = 0;
   ORDER_LOGIN = 1;
-  ORDER_TRANSFORM = 2;
+  ORDER_LOBBY_FIND = 2;
+  ORDER_LOBBY_JOIN = 3;
+  ORDER_LOBBY_CREATE = 4;
+  ORDER_GAME_TRANSFORM = 5;
 }

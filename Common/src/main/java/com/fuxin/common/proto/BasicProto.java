@@ -145,9 +145,21 @@ public final class BasicProto {
      */
     ORDER_LOGIN(1),
     /**
-     * <code>ORDER_TRANSFORM = 2;</code>
+     * <code>ORDER_LOBBY_FIND = 2;</code>
      */
-    ORDER_TRANSFORM(2),
+    ORDER_LOBBY_FIND(2),
+    /**
+     * <code>ORDER_LOBBY_JOIN = 3;</code>
+     */
+    ORDER_LOBBY_JOIN(3),
+    /**
+     * <code>ORDER_LOBBY_CREATE = 4;</code>
+     */
+    ORDER_LOBBY_CREATE(4),
+    /**
+     * <code>ORDER_GAME_TRANSFORM = 5;</code>
+     */
+    ORDER_GAME_TRANSFORM(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,9 +172,21 @@ public final class BasicProto {
      */
     public static final int ORDER_LOGIN_VALUE = 1;
     /**
-     * <code>ORDER_TRANSFORM = 2;</code>
+     * <code>ORDER_LOBBY_FIND = 2;</code>
      */
-    public static final int ORDER_TRANSFORM_VALUE = 2;
+    public static final int ORDER_LOBBY_FIND_VALUE = 2;
+    /**
+     * <code>ORDER_LOBBY_JOIN = 3;</code>
+     */
+    public static final int ORDER_LOBBY_JOIN_VALUE = 3;
+    /**
+     * <code>ORDER_LOBBY_CREATE = 4;</code>
+     */
+    public static final int ORDER_LOBBY_CREATE_VALUE = 4;
+    /**
+     * <code>ORDER_GAME_TRANSFORM = 5;</code>
+     */
+    public static final int ORDER_GAME_TRANSFORM_VALUE = 5;
 
 
     public final int getNumber() {
@@ -191,7 +215,10 @@ public final class BasicProto {
       switch (value) {
         case 0: return ORDER_NONE;
         case 1: return ORDER_LOGIN;
-        case 2: return ORDER_TRANSFORM;
+        case 2: return ORDER_LOBBY_FIND;
+        case 3: return ORDER_LOBBY_JOIN;
+        case 4: return ORDER_LOBBY_CREATE;
+        case 5: return ORDER_GAME_TRANSFORM;
         default: return null;
       }
     }
@@ -873,6 +900,12 @@ public final class BasicProto {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    /**
+     * <code>bytes body = 3;</code>
+     * @return The body.
+     */
+    com.google.protobuf.ByteString getBody();
   }
   /**
    * Protobuf type {@code com.fuxin.common.proto.BaseRes}
@@ -889,6 +922,7 @@ public final class BasicProto {
     private BaseRes() {
       status_ = 0;
       msg_ = "";
+      body_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -931,6 +965,11 @@ public final class BasicProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               msg_ = s;
+              break;
+            }
+            case 26: {
+
+              body_ = input.readBytes();
               break;
             }
             default: {
@@ -1022,6 +1061,17 @@ public final class BasicProto {
       }
     }
 
+    public static final int BODY_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString body_;
+    /**
+     * <code>bytes body = 3;</code>
+     * @return The body.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBody() {
+      return body_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1042,6 +1092,9 @@ public final class BasicProto {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
+      if (!body_.isEmpty()) {
+        output.writeBytes(3, body_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1057,6 +1110,10 @@ public final class BasicProto {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(msg_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      }
+      if (!body_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, body_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1076,6 +1133,8 @@ public final class BasicProto {
       if (status_ != other.status_) return false;
       if (!getMsg()
           .equals(other.getMsg())) return false;
+      if (!getBody()
+          .equals(other.getBody())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1091,6 +1150,8 @@ public final class BasicProto {
       hash = (53 * hash) + status_;
       hash = (37 * hash) + MSG_FIELD_NUMBER;
       hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + BODY_FIELD_NUMBER;
+      hash = (53 * hash) + getBody().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1228,6 +1289,8 @@ public final class BasicProto {
 
         msg_ = "";
 
+        body_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -1256,6 +1319,7 @@ public final class BasicProto {
         com.fuxin.common.proto.BasicProto.BaseRes result = new com.fuxin.common.proto.BasicProto.BaseRes(this);
         result.status_ = status_;
         result.msg_ = msg_;
+        result.body_ = body_;
         onBuilt();
         return result;
       }
@@ -1310,6 +1374,9 @@ public final class BasicProto {
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
           onChanged();
+        }
+        if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
+          setBody(other.getBody());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1469,6 +1536,40 @@ public final class BasicProto {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>bytes body = 3;</code>
+       * @return The body.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBody() {
+        return body_;
+      }
+      /**
+       * <code>bytes body = 3;</code>
+       * @param value The body to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBody(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        body_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bytes body = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBody() {
+        
+        body_ = getDefaultInstance().getBody();
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1543,13 +1644,15 @@ public final class BasicProto {
     java.lang.String[] descriptorData = {
       "\n\013Basic.proto\022\026com.fuxin.common.proto\"M\n" +
       "\007BaseReq\0224\n\005order\030\001 \001(\0162%.com.fuxin.comm" +
-      "on.proto.DataOrderType\022\014\n\004body\030\002 \001(\014\"I\n\007" +
+      "on.proto.DataOrderType\022\014\n\004body\030\002 \001(\014\"W\n\007" +
       "BaseRes\0221\n\006status\030\001 \001(\0162!.com.fuxin.comm" +
-      "on.proto.ResStatus\022\013\n\003msg\030\002 \001(\t*B\n\tResSt" +
-      "atus\022\017\n\013STATUS_NONE\020\000\022\022\n\016STATUS_SUCCESS\020" +
-      "\001\022\020\n\014STATUS_ERROR\020\002*E\n\rDataOrderType\022\016\n\n" +
-      "ORDER_NONE\020\000\022\017\n\013ORDER_LOGIN\020\001\022\023\n\017ORDER_T" +
-      "RANSFORM\020\002B\014B\nBasicProtob\006proto3"
+      "on.proto.ResStatus\022\013\n\003msg\030\002 \001(\t\022\014\n\004body\030" +
+      "\003 \001(\014*B\n\tResStatus\022\017\n\013STATUS_NONE\020\000\022\022\n\016S" +
+      "TATUS_SUCCESS\020\001\022\020\n\014STATUS_ERROR\020\002*\216\001\n\rDa" +
+      "taOrderType\022\016\n\nORDER_NONE\020\000\022\017\n\013ORDER_LOG" +
+      "IN\020\001\022\024\n\020ORDER_LOBBY_FIND\020\002\022\024\n\020ORDER_LOBB" +
+      "Y_JOIN\020\003\022\026\n\022ORDER_LOBBY_CREATE\020\004\022\030\n\024ORDE" +
+      "R_GAME_TRANSFORM\020\005B\014B\nBasicProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1566,7 +1669,7 @@ public final class BasicProto {
     internal_static_com_fuxin_common_proto_BaseRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_fuxin_common_proto_BaseRes_descriptor,
-        new java.lang.String[] { "Status", "Msg", });
+        new java.lang.String[] { "Status", "Msg", "Body", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

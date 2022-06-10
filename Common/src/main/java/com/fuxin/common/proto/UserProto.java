@@ -961,52 +961,37 @@ public final class UserProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     * @return Whether the res field is set.
-     */
-    boolean hasRes();
-    /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     * @return The res.
-     */
-    com.fuxin.common.proto.BasicProto.BaseRes getRes();
-    /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     */
-    com.fuxin.common.proto.BasicProto.BaseResOrBuilder getResOrBuilder();
-
-    /**
-     * <code>int32 LobbyPort = 2;</code>
+     * <code>int32 LobbyPort = 1;</code>
      * @return The lobbyPort.
      */
     int getLobbyPort();
 
     /**
-     * <code>string LobbyHost = 3;</code>
+     * <code>string LobbyHost = 2;</code>
      * @return The lobbyHost.
      */
     java.lang.String getLobbyHost();
     /**
-     * <code>string LobbyHost = 3;</code>
+     * <code>string LobbyHost = 2;</code>
      * @return The bytes for lobbyHost.
      */
     com.google.protobuf.ByteString
         getLobbyHostBytes();
 
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      * @return Whether the user field is set.
      */
     boolean hasUser();
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      * @return The user.
      */
-    com.fuxin.common.proto.UserProto.User getUser();
+    com.fuxin.common.proto.UserProto.UserInfo getUser();
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      */
-    com.fuxin.common.proto.UserProto.UserOrBuilder getUserOrBuilder();
+    com.fuxin.common.proto.UserProto.UserInfoOrBuilder getUserOrBuilder();
   }
   /**
    * Protobuf type {@code com.fuxin.common.proto.LoginResponse}
@@ -1054,36 +1039,23 @@ public final class UserProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.fuxin.common.proto.BasicProto.BaseRes.Builder subBuilder = null;
-              if (res_ != null) {
-                subBuilder = res_.toBuilder();
-              }
-              res_ = input.readMessage(com.fuxin.common.proto.BasicProto.BaseRes.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(res_);
-                res_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
+            case 8: {
 
               lobbyPort_ = input.readInt32();
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               lobbyHost_ = s;
               break;
             }
-            case 34: {
-              com.fuxin.common.proto.UserProto.User.Builder subBuilder = null;
+            case 26: {
+              com.fuxin.common.proto.UserProto.UserInfo.Builder subBuilder = null;
               if (user_ != null) {
                 subBuilder = user_.toBuilder();
               }
-              user_ = input.readMessage(com.fuxin.common.proto.UserProto.User.parser(), extensionRegistry);
+              user_ = input.readMessage(com.fuxin.common.proto.UserProto.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(user_);
                 user_ = subBuilder.buildPartial();
@@ -1123,36 +1095,10 @@ public final class UserProto {
               com.fuxin.common.proto.UserProto.LoginResponse.class, com.fuxin.common.proto.UserProto.LoginResponse.Builder.class);
     }
 
-    public static final int RES_FIELD_NUMBER = 1;
-    private com.fuxin.common.proto.BasicProto.BaseRes res_;
-    /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     * @return Whether the res field is set.
-     */
-    @java.lang.Override
-    public boolean hasRes() {
-      return res_ != null;
-    }
-    /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     * @return The res.
-     */
-    @java.lang.Override
-    public com.fuxin.common.proto.BasicProto.BaseRes getRes() {
-      return res_ == null ? com.fuxin.common.proto.BasicProto.BaseRes.getDefaultInstance() : res_;
-    }
-    /**
-     * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-     */
-    @java.lang.Override
-    public com.fuxin.common.proto.BasicProto.BaseResOrBuilder getResOrBuilder() {
-      return getRes();
-    }
-
-    public static final int LOBBYPORT_FIELD_NUMBER = 2;
+    public static final int LOBBYPORT_FIELD_NUMBER = 1;
     private int lobbyPort_;
     /**
-     * <code>int32 LobbyPort = 2;</code>
+     * <code>int32 LobbyPort = 1;</code>
      * @return The lobbyPort.
      */
     @java.lang.Override
@@ -1160,10 +1106,10 @@ public final class UserProto {
       return lobbyPort_;
     }
 
-    public static final int LOBBYHOST_FIELD_NUMBER = 3;
+    public static final int LOBBYHOST_FIELD_NUMBER = 2;
     private volatile java.lang.Object lobbyHost_;
     /**
-     * <code>string LobbyHost = 3;</code>
+     * <code>string LobbyHost = 2;</code>
      * @return The lobbyHost.
      */
     @java.lang.Override
@@ -1180,7 +1126,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>string LobbyHost = 3;</code>
+     * <code>string LobbyHost = 2;</code>
      * @return The bytes for lobbyHost.
      */
     @java.lang.Override
@@ -1198,10 +1144,10 @@ public final class UserProto {
       }
     }
 
-    public static final int USER_FIELD_NUMBER = 4;
-    private com.fuxin.common.proto.UserProto.User user_;
+    public static final int USER_FIELD_NUMBER = 3;
+    private com.fuxin.common.proto.UserProto.UserInfo user_;
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      * @return Whether the user field is set.
      */
     @java.lang.Override
@@ -1209,18 +1155,18 @@ public final class UserProto {
       return user_ != null;
     }
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      * @return The user.
      */
     @java.lang.Override
-    public com.fuxin.common.proto.UserProto.User getUser() {
-      return user_ == null ? com.fuxin.common.proto.UserProto.User.getDefaultInstance() : user_;
+    public com.fuxin.common.proto.UserProto.UserInfo getUser() {
+      return user_ == null ? com.fuxin.common.proto.UserProto.UserInfo.getDefaultInstance() : user_;
     }
     /**
-     * <code>.com.fuxin.common.proto.User user = 4;</code>
+     * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
      */
     @java.lang.Override
-    public com.fuxin.common.proto.UserProto.UserOrBuilder getUserOrBuilder() {
+    public com.fuxin.common.proto.UserProto.UserInfoOrBuilder getUserOrBuilder() {
       return getUser();
     }
 
@@ -1238,17 +1184,14 @@ public final class UserProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (res_ != null) {
-        output.writeMessage(1, getRes());
-      }
       if (lobbyPort_ != 0) {
-        output.writeInt32(2, lobbyPort_);
+        output.writeInt32(1, lobbyPort_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lobbyHost_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lobbyHost_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lobbyHost_);
       }
       if (user_ != null) {
-        output.writeMessage(4, getUser());
+        output.writeMessage(3, getUser());
       }
       unknownFields.writeTo(output);
     }
@@ -1259,20 +1202,16 @@ public final class UserProto {
       if (size != -1) return size;
 
       size = 0;
-      if (res_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getRes());
-      }
       if (lobbyPort_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, lobbyPort_);
+          .computeInt32Size(1, lobbyPort_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lobbyHost_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lobbyHost_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lobbyHost_);
       }
       if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getUser());
+          .computeMessageSize(3, getUser());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1289,11 +1228,6 @@ public final class UserProto {
       }
       com.fuxin.common.proto.UserProto.LoginResponse other = (com.fuxin.common.proto.UserProto.LoginResponse) obj;
 
-      if (hasRes() != other.hasRes()) return false;
-      if (hasRes()) {
-        if (!getRes()
-            .equals(other.getRes())) return false;
-      }
       if (getLobbyPort()
           != other.getLobbyPort()) return false;
       if (!getLobbyHost()
@@ -1314,10 +1248,6 @@ public final class UserProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasRes()) {
-        hash = (37 * hash) + RES_FIELD_NUMBER;
-        hash = (53 * hash) + getRes().hashCode();
-      }
       hash = (37 * hash) + LOBBYPORT_FIELD_NUMBER;
       hash = (53 * hash) + getLobbyPort();
       hash = (37 * hash) + LOBBYHOST_FIELD_NUMBER;
@@ -1459,12 +1389,6 @@ public final class UserProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (resBuilder_ == null) {
-          res_ = null;
-        } else {
-          res_ = null;
-          resBuilder_ = null;
-        }
         lobbyPort_ = 0;
 
         lobbyHost_ = "";
@@ -1501,11 +1425,6 @@ public final class UserProto {
       @java.lang.Override
       public com.fuxin.common.proto.UserProto.LoginResponse buildPartial() {
         com.fuxin.common.proto.UserProto.LoginResponse result = new com.fuxin.common.proto.UserProto.LoginResponse(this);
-        if (resBuilder_ == null) {
-          result.res_ = res_;
-        } else {
-          result.res_ = resBuilder_.build();
-        }
         result.lobbyPort_ = lobbyPort_;
         result.lobbyHost_ = lobbyHost_;
         if (userBuilder_ == null) {
@@ -1561,9 +1480,6 @@ public final class UserProto {
 
       public Builder mergeFrom(com.fuxin.common.proto.UserProto.LoginResponse other) {
         if (other == com.fuxin.common.proto.UserProto.LoginResponse.getDefaultInstance()) return this;
-        if (other.hasRes()) {
-          mergeRes(other.getRes());
-        }
         if (other.getLobbyPort() != 0) {
           setLobbyPort(other.getLobbyPort());
         }
@@ -1603,128 +1519,9 @@ public final class UserProto {
         return this;
       }
 
-      private com.fuxin.common.proto.BasicProto.BaseRes res_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.fuxin.common.proto.BasicProto.BaseRes, com.fuxin.common.proto.BasicProto.BaseRes.Builder, com.fuxin.common.proto.BasicProto.BaseResOrBuilder> resBuilder_;
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       * @return Whether the res field is set.
-       */
-      public boolean hasRes() {
-        return resBuilder_ != null || res_ != null;
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       * @return The res.
-       */
-      public com.fuxin.common.proto.BasicProto.BaseRes getRes() {
-        if (resBuilder_ == null) {
-          return res_ == null ? com.fuxin.common.proto.BasicProto.BaseRes.getDefaultInstance() : res_;
-        } else {
-          return resBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public Builder setRes(com.fuxin.common.proto.BasicProto.BaseRes value) {
-        if (resBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          res_ = value;
-          onChanged();
-        } else {
-          resBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public Builder setRes(
-          com.fuxin.common.proto.BasicProto.BaseRes.Builder builderForValue) {
-        if (resBuilder_ == null) {
-          res_ = builderForValue.build();
-          onChanged();
-        } else {
-          resBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public Builder mergeRes(com.fuxin.common.proto.BasicProto.BaseRes value) {
-        if (resBuilder_ == null) {
-          if (res_ != null) {
-            res_ =
-              com.fuxin.common.proto.BasicProto.BaseRes.newBuilder(res_).mergeFrom(value).buildPartial();
-          } else {
-            res_ = value;
-          }
-          onChanged();
-        } else {
-          resBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public Builder clearRes() {
-        if (resBuilder_ == null) {
-          res_ = null;
-          onChanged();
-        } else {
-          res_ = null;
-          resBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public com.fuxin.common.proto.BasicProto.BaseRes.Builder getResBuilder() {
-        
-        onChanged();
-        return getResFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      public com.fuxin.common.proto.BasicProto.BaseResOrBuilder getResOrBuilder() {
-        if (resBuilder_ != null) {
-          return resBuilder_.getMessageOrBuilder();
-        } else {
-          return res_ == null ?
-              com.fuxin.common.proto.BasicProto.BaseRes.getDefaultInstance() : res_;
-        }
-      }
-      /**
-       * <code>.com.fuxin.common.proto.BaseRes res = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.fuxin.common.proto.BasicProto.BaseRes, com.fuxin.common.proto.BasicProto.BaseRes.Builder, com.fuxin.common.proto.BasicProto.BaseResOrBuilder> 
-          getResFieldBuilder() {
-        if (resBuilder_ == null) {
-          resBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.fuxin.common.proto.BasicProto.BaseRes, com.fuxin.common.proto.BasicProto.BaseRes.Builder, com.fuxin.common.proto.BasicProto.BaseResOrBuilder>(
-                  getRes(),
-                  getParentForChildren(),
-                  isClean());
-          res_ = null;
-        }
-        return resBuilder_;
-      }
-
       private int lobbyPort_ ;
       /**
-       * <code>int32 LobbyPort = 2;</code>
+       * <code>int32 LobbyPort = 1;</code>
        * @return The lobbyPort.
        */
       @java.lang.Override
@@ -1732,7 +1529,7 @@ public final class UserProto {
         return lobbyPort_;
       }
       /**
-       * <code>int32 LobbyPort = 2;</code>
+       * <code>int32 LobbyPort = 1;</code>
        * @param value The lobbyPort to set.
        * @return This builder for chaining.
        */
@@ -1743,7 +1540,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>int32 LobbyPort = 2;</code>
+       * <code>int32 LobbyPort = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLobbyPort() {
@@ -1755,7 +1552,7 @@ public final class UserProto {
 
       private java.lang.Object lobbyHost_ = "";
       /**
-       * <code>string LobbyHost = 3;</code>
+       * <code>string LobbyHost = 2;</code>
        * @return The lobbyHost.
        */
       public java.lang.String getLobbyHost() {
@@ -1771,7 +1568,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>string LobbyHost = 3;</code>
+       * <code>string LobbyHost = 2;</code>
        * @return The bytes for lobbyHost.
        */
       public com.google.protobuf.ByteString
@@ -1788,7 +1585,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>string LobbyHost = 3;</code>
+       * <code>string LobbyHost = 2;</code>
        * @param value The lobbyHost to set.
        * @return This builder for chaining.
        */
@@ -1803,7 +1600,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>string LobbyHost = 3;</code>
+       * <code>string LobbyHost = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLobbyHost() {
@@ -1813,7 +1610,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>string LobbyHost = 3;</code>
+       * <code>string LobbyHost = 2;</code>
        * @param value The bytes for lobbyHost to set.
        * @return This builder for chaining.
        */
@@ -1829,31 +1626,31 @@ public final class UserProto {
         return this;
       }
 
-      private com.fuxin.common.proto.UserProto.User user_;
+      private com.fuxin.common.proto.UserProto.UserInfo user_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.fuxin.common.proto.UserProto.User, com.fuxin.common.proto.UserProto.User.Builder, com.fuxin.common.proto.UserProto.UserOrBuilder> userBuilder_;
+          com.fuxin.common.proto.UserProto.UserInfo, com.fuxin.common.proto.UserProto.UserInfo.Builder, com.fuxin.common.proto.UserProto.UserInfoOrBuilder> userBuilder_;
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        * @return Whether the user field is set.
        */
       public boolean hasUser() {
         return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        * @return The user.
        */
-      public com.fuxin.common.proto.UserProto.User getUser() {
+      public com.fuxin.common.proto.UserProto.UserInfo getUser() {
         if (userBuilder_ == null) {
-          return user_ == null ? com.fuxin.common.proto.UserProto.User.getDefaultInstance() : user_;
+          return user_ == null ? com.fuxin.common.proto.UserProto.UserInfo.getDefaultInstance() : user_;
         } else {
           return userBuilder_.getMessage();
         }
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
-      public Builder setUser(com.fuxin.common.proto.UserProto.User value) {
+      public Builder setUser(com.fuxin.common.proto.UserProto.UserInfo value) {
         if (userBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1867,10 +1664,10 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
       public Builder setUser(
-          com.fuxin.common.proto.UserProto.User.Builder builderForValue) {
+          com.fuxin.common.proto.UserProto.UserInfo.Builder builderForValue) {
         if (userBuilder_ == null) {
           user_ = builderForValue.build();
           onChanged();
@@ -1881,13 +1678,13 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
-      public Builder mergeUser(com.fuxin.common.proto.UserProto.User value) {
+      public Builder mergeUser(com.fuxin.common.proto.UserProto.UserInfo value) {
         if (userBuilder_ == null) {
           if (user_ != null) {
             user_ =
-              com.fuxin.common.proto.UserProto.User.newBuilder(user_).mergeFrom(value).buildPartial();
+              com.fuxin.common.proto.UserProto.UserInfo.newBuilder(user_).mergeFrom(value).buildPartial();
           } else {
             user_ = value;
           }
@@ -1899,7 +1696,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
       public Builder clearUser() {
         if (userBuilder_ == null) {
@@ -1913,33 +1710,33 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
-      public com.fuxin.common.proto.UserProto.User.Builder getUserBuilder() {
+      public com.fuxin.common.proto.UserProto.UserInfo.Builder getUserBuilder() {
         
         onChanged();
         return getUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
-      public com.fuxin.common.proto.UserProto.UserOrBuilder getUserOrBuilder() {
+      public com.fuxin.common.proto.UserProto.UserInfoOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
           return userBuilder_.getMessageOrBuilder();
         } else {
           return user_ == null ?
-              com.fuxin.common.proto.UserProto.User.getDefaultInstance() : user_;
+              com.fuxin.common.proto.UserProto.UserInfo.getDefaultInstance() : user_;
         }
       }
       /**
-       * <code>.com.fuxin.common.proto.User user = 4;</code>
+       * <code>.com.fuxin.common.proto.UserInfo user = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.fuxin.common.proto.UserProto.User, com.fuxin.common.proto.UserProto.User.Builder, com.fuxin.common.proto.UserProto.UserOrBuilder> 
+          com.fuxin.common.proto.UserProto.UserInfo, com.fuxin.common.proto.UserProto.UserInfo.Builder, com.fuxin.common.proto.UserProto.UserInfoOrBuilder> 
           getUserFieldBuilder() {
         if (userBuilder_ == null) {
           userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.fuxin.common.proto.UserProto.User, com.fuxin.common.proto.UserProto.User.Builder, com.fuxin.common.proto.UserProto.UserOrBuilder>(
+              com.fuxin.common.proto.UserProto.UserInfo, com.fuxin.common.proto.UserProto.UserInfo.Builder, com.fuxin.common.proto.UserProto.UserInfoOrBuilder>(
                   getUser(),
                   getParentForChildren(),
                   isClean());
@@ -2000,8 +1797,8 @@ public final class UserProto {
 
   }
 
-  public interface UserOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.fuxin.common.proto.User)
+  public interface UserInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.fuxin.common.proto.UserInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2053,18 +1850,18 @@ public final class UserProto {
     double getLevel();
   }
   /**
-   * Protobuf type {@code com.fuxin.common.proto.User}
+   * Protobuf type {@code com.fuxin.common.proto.UserInfo}
    */
-  public static final class User extends
+  public static final class UserInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.fuxin.common.proto.User)
-      UserOrBuilder {
+      // @@protoc_insertion_point(message_implements:com.fuxin.common.proto.UserInfo)
+      UserInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use User.newBuilder() to construct.
-    private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use UserInfo.newBuilder() to construct.
+    private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private User() {
+    private UserInfo() {
       userId_ = "";
       username_ = "";
       token_ = "";
@@ -2074,7 +1871,7 @@ public final class UserProto {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new User();
+      return new UserInfo();
     }
 
     @java.lang.Override
@@ -2082,7 +1879,7 @@ public final class UserProto {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private User(
+    private UserInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2149,15 +1946,15 @@ public final class UserProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_User_descriptor;
+      return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_UserInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_User_fieldAccessorTable
+      return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_UserInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.fuxin.common.proto.UserProto.User.class, com.fuxin.common.proto.UserProto.User.Builder.class);
+              com.fuxin.common.proto.UserProto.UserInfo.class, com.fuxin.common.proto.UserProto.UserInfo.Builder.class);
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
@@ -2361,10 +2158,10 @@ public final class UserProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.fuxin.common.proto.UserProto.User)) {
+      if (!(obj instanceof com.fuxin.common.proto.UserProto.UserInfo)) {
         return super.equals(obj);
       }
-      com.fuxin.common.proto.UserProto.User other = (com.fuxin.common.proto.UserProto.User) obj;
+      com.fuxin.common.proto.UserProto.UserInfo other = (com.fuxin.common.proto.UserProto.UserInfo) obj;
 
       if (!getUserId()
           .equals(other.getUserId())) return false;
@@ -2404,69 +2201,69 @@ public final class UserProto {
       return hash;
     }
 
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(byte[] data)
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(java.io.InputStream input)
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.fuxin.common.proto.UserProto.User parseDelimitedFrom(java.io.InputStream input)
+    public static com.fuxin.common.proto.UserProto.UserInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.fuxin.common.proto.UserProto.User parseDelimitedFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.fuxin.common.proto.UserProto.User parseFrom(
+    public static com.fuxin.common.proto.UserProto.UserInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2479,7 +2276,7 @@ public final class UserProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.fuxin.common.proto.UserProto.User prototype) {
+    public static Builder newBuilder(com.fuxin.common.proto.UserProto.UserInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2495,26 +2292,26 @@ public final class UserProto {
       return builder;
     }
     /**
-     * Protobuf type {@code com.fuxin.common.proto.User}
+     * Protobuf type {@code com.fuxin.common.proto.UserInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.fuxin.common.proto.User)
-        com.fuxin.common.proto.UserProto.UserOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.fuxin.common.proto.UserInfo)
+        com.fuxin.common.proto.UserProto.UserInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_User_descriptor;
+        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_UserInfo_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_User_fieldAccessorTable
+        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_UserInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.fuxin.common.proto.UserProto.User.class, com.fuxin.common.proto.UserProto.User.Builder.class);
+                com.fuxin.common.proto.UserProto.UserInfo.class, com.fuxin.common.proto.UserProto.UserInfo.Builder.class);
       }
 
-      // Construct using com.fuxin.common.proto.UserProto.User.newBuilder()
+      // Construct using com.fuxin.common.proto.UserProto.UserInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2548,17 +2345,17 @@ public final class UserProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_User_descriptor;
+        return com.fuxin.common.proto.UserProto.internal_static_com_fuxin_common_proto_UserInfo_descriptor;
       }
 
       @java.lang.Override
-      public com.fuxin.common.proto.UserProto.User getDefaultInstanceForType() {
-        return com.fuxin.common.proto.UserProto.User.getDefaultInstance();
+      public com.fuxin.common.proto.UserProto.UserInfo getDefaultInstanceForType() {
+        return com.fuxin.common.proto.UserProto.UserInfo.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.fuxin.common.proto.UserProto.User build() {
-        com.fuxin.common.proto.UserProto.User result = buildPartial();
+      public com.fuxin.common.proto.UserProto.UserInfo build() {
+        com.fuxin.common.proto.UserProto.UserInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2566,8 +2363,8 @@ public final class UserProto {
       }
 
       @java.lang.Override
-      public com.fuxin.common.proto.UserProto.User buildPartial() {
-        com.fuxin.common.proto.UserProto.User result = new com.fuxin.common.proto.UserProto.User(this);
+      public com.fuxin.common.proto.UserProto.UserInfo buildPartial() {
+        com.fuxin.common.proto.UserProto.UserInfo result = new com.fuxin.common.proto.UserProto.UserInfo(this);
         result.userId_ = userId_;
         result.username_ = username_;
         result.token_ = token_;
@@ -2611,16 +2408,16 @@ public final class UserProto {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.fuxin.common.proto.UserProto.User) {
-          return mergeFrom((com.fuxin.common.proto.UserProto.User)other);
+        if (other instanceof com.fuxin.common.proto.UserProto.UserInfo) {
+          return mergeFrom((com.fuxin.common.proto.UserProto.UserInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.fuxin.common.proto.UserProto.User other) {
-        if (other == com.fuxin.common.proto.UserProto.User.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.fuxin.common.proto.UserProto.UserInfo other) {
+        if (other == com.fuxin.common.proto.UserProto.UserInfo.getDefaultInstance()) return this;
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
@@ -2654,11 +2451,11 @@ public final class UserProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.fuxin.common.proto.UserProto.User parsedMessage = null;
+        com.fuxin.common.proto.UserProto.UserInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.fuxin.common.proto.UserProto.User) e.getUnfinishedMessage();
+          parsedMessage = (com.fuxin.common.proto.UserProto.UserInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2970,41 +2767,41 @@ public final class UserProto {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.fuxin.common.proto.User)
+      // @@protoc_insertion_point(builder_scope:com.fuxin.common.proto.UserInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:com.fuxin.common.proto.User)
-    private static final com.fuxin.common.proto.UserProto.User DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.fuxin.common.proto.UserInfo)
+    private static final com.fuxin.common.proto.UserProto.UserInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.fuxin.common.proto.UserProto.User();
+      DEFAULT_INSTANCE = new com.fuxin.common.proto.UserProto.UserInfo();
     }
 
-    public static com.fuxin.common.proto.UserProto.User getDefaultInstance() {
+    public static com.fuxin.common.proto.UserProto.UserInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<User>
-        PARSER = new com.google.protobuf.AbstractParser<User>() {
+    private static final com.google.protobuf.Parser<UserInfo>
+        PARSER = new com.google.protobuf.AbstractParser<UserInfo>() {
       @java.lang.Override
-      public User parsePartialFrom(
+      public UserInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new User(input, extensionRegistry);
+        return new UserInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<User> parser() {
+    public static com.google.protobuf.Parser<UserInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<User> getParserForType() {
+    public com.google.protobuf.Parser<UserInfo> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.fuxin.common.proto.UserProto.User getDefaultInstanceForType() {
+    public com.fuxin.common.proto.UserProto.UserInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3021,10 +2818,10 @@ public final class UserProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_fuxin_common_proto_LoginResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_fuxin_common_proto_User_descriptor;
+    internal_static_com_fuxin_common_proto_UserInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_fuxin_common_proto_User_fieldAccessorTable;
+      internal_static_com_fuxin_common_proto_UserInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3034,23 +2831,21 @@ public final class UserProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nUser.proto\022\026com.fuxin.common.proto\032\013Ba" +
-      "sic.proto\"j\n\014LoginRequest\022\016\n\006UserId\030\001 \001(" +
-      "\t\022\020\n\010UserName\030\002 \001(\t\0228\n\010Platform\030\003 \001(\0162&." +
-      "com.fuxin.common.proto.PlayerPlatform\"\217\001" +
-      "\n\rLoginResponse\022,\n\003res\030\001 \001(\0132\037.com.fuxin" +
-      ".common.proto.BaseRes\022\021\n\tLobbyPort\030\002 \001(\005" +
-      "\022\021\n\tLobbyHost\030\003 \001(\t\022*\n\004user\030\004 \001(\0132\034.com." +
-      "fuxin.common.proto.User\"V\n\004User\022\016\n\006UserI" +
-      "d\030\001 \001(\t\022\020\n\010Username\030\002 \001(\t\022\r\n\005Token\030\003 \001(\t" +
-      "\022\016\n\006Status\030\004 \001(\005\022\r\n\005Level\030\005 \001(\001*0\n\016Playe" +
-      "rPlatform\022\t\n\005STEAM\020\000\022\010\n\004EPIC\020\001\022\t\n\005OTHER\020" +
-      "\002B\013B\tUserProtob\006proto3"
+      "\n\nUser.proto\022\026com.fuxin.common.proto\"j\n\014" +
+      "LoginRequest\022\016\n\006UserId\030\001 \001(\t\022\020\n\010UserName" +
+      "\030\002 \001(\t\0228\n\010Platform\030\003 \001(\0162&.com.fuxin.com" +
+      "mon.proto.PlayerPlatform\"e\n\rLoginRespons" +
+      "e\022\021\n\tLobbyPort\030\001 \001(\005\022\021\n\tLobbyHost\030\002 \001(\t\022" +
+      ".\n\004user\030\003 \001(\0132 .com.fuxin.common.proto.U" +
+      "serInfo\"Z\n\010UserInfo\022\016\n\006UserId\030\001 \001(\t\022\020\n\010U" +
+      "sername\030\002 \001(\t\022\r\n\005Token\030\003 \001(\t\022\016\n\006Status\030\004" +
+      " \001(\005\022\r\n\005Level\030\005 \001(\001*0\n\016PlayerPlatform\022\t\n" +
+      "\005STEAM\020\000\022\010\n\004EPIC\020\001\022\t\n\005OTHER\020\002B\013B\tUserPro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.fuxin.common.proto.BasicProto.getDescriptor(),
         });
     internal_static_com_fuxin_common_proto_LoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3063,14 +2858,13 @@ public final class UserProto {
     internal_static_com_fuxin_common_proto_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_fuxin_common_proto_LoginResponse_descriptor,
-        new java.lang.String[] { "Res", "LobbyPort", "LobbyHost", "User", });
-    internal_static_com_fuxin_common_proto_User_descriptor =
+        new java.lang.String[] { "LobbyPort", "LobbyHost", "User", });
+    internal_static_com_fuxin_common_proto_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_com_fuxin_common_proto_User_fieldAccessorTable = new
+    internal_static_com_fuxin_common_proto_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_fuxin_common_proto_User_descriptor,
+        internal_static_com_fuxin_common_proto_UserInfo_descriptor,
         new java.lang.String[] { "UserId", "Username", "Token", "Status", "Level", });
-    com.fuxin.common.proto.BasicProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
